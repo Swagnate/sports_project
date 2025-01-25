@@ -49,14 +49,3 @@ def discipline_create(request):
     else:
         form = DisciplineForm()
     return render(request, 'athletes/discipline_form.html', {'form': form})
-
-def discipline_edit(request, pk):
-    discipline = get_object_or_404(Discipline, pk=pk)
-    if request.method == 'POST':
-        form = DisciplineForm(request.POST, instance=discipline)
-        if form.is_valid():
-           form.save()
-            return redirect('discipline_list')
-    else:
-        form = DisciplineForm(instance=discipline)
-    return render(request, 'athletes/discipline_form.html', {'form': form})
