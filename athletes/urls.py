@@ -6,6 +6,7 @@ from .views import (
 )
 
 urlpatterns = [
+    
     # URL для стран
     path('countries/', country_list, name='country_list'),
     path('countries/create/', country_create, name='country_create'),
