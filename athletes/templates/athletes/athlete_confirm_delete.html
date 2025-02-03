@@ -7,16 +7,34 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Удалить участника</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>Удалить участника</h1>
-    <p>Вы уверены, что хотите удалить участника "{{ athlete.name }}"?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Удалить</button>
-    </form>
-    <a href="{% url 'athlete_list' %}">Отмена</a>
+    <div class="container">
+        <h1>Удалить участника</h1>
+
+        <!-- Блок для отображения сообщений -->
+        {% if messages %}
+        <div class="mt-3">
+            <ul class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <p>Вы уверены, что хотите удалить участника "{{ athlete.name }}"?</p>
+
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Удалить</button>
+            <a href="{% url 'athlete_list' %}" class="btn btn-secondary">Отмена</a>
+        </form>
+    </div>
 </body>
 
 </html>

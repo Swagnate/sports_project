@@ -7,16 +7,34 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% if form.instance.pk %}Редактировать{% else %}Добавить{% endif %} дисциплину</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>{% if form.instance.pk %}Редактировать{% else %}Добавить{% endif %} дисциплину</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Сохранить</button>
-    </form>
-    <a href="{% url 'discipline_list' %}">Назад к списку дисциплин</a>
+    <div class="container">
+        <h1>{% if form.instance.pk %}Редактировать{% else %}Добавить{% endif %} дисциплину</h1>
+
+        <!-- Блок для отображения сообщений -->
+        {% if messages %}
+        <div class="mt-3">
+            <ul class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+
+        <a href="{% url 'discipline_list' %}" class="btn btn-secondary mt-3">Назад к списку дисциплин</a>
+    </div>
 </body>
 
 </html>
