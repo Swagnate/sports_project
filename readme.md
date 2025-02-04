@@ -1,17 +1,38 @@
 # Sports Registration App
 
-```git clone https://github.com/Swagnate/sports_project.git```
+## Установка
 
-```cd sports_registration```
+### 1. Клонируйте репозиторий
 
-```python -m venv venv```
+```bash
+git clone https://github.com/Swagnate/sports_project.git
+```
 
-```venv\Scripts\activat```
+### 2. Перейдите в папку проекта:
 
-```pip install -r requirements.txt```
+`cd sports_registration`
 
-```python manage.py migrate```
+### 3. Создайте виртуальное окружение:
 
-```python manage.py createsuperuser```
+`python -m venv venv`
 
-```python manage.py runserver```
+### 4. Активируйте виртуальное окружение:
+
+# на Windows
+
+`venv\Scripts\activate`
+
+# Для macOS/Linux:
+`source venv/bin/activate`
+### 5. Установите зависимости:
+
+`pip install -r requirements.txt`
+
+### 6. Примените миграции базы данных:
+`python manage.py migrate`
+### 7. Создайте суперпользователя для доступа к административной панели:
+
+`python manage.py createsuperuser`
+### 8. Запустите сервер:
+
+`python manage.py runserver`
