@@ -8,7 +8,9 @@ git clone https://github.com/Swagnate/sports_project.git
 ```
 
 ### 2. Перейдите в папку проекта:
-```cd sports_registration```
+```
+cd sports_registration
+```
 
 ### 3. Создайте виртуальное окружение:
 ```python -m venv venv```
