@@ -12,7 +12,7 @@ body {
 
 
 header {
-    background: #007bff;
+    background: #394450;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -58,6 +58,15 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
+
+nav a {
+    color: white; /* Цвет текста ссылок */
+    text-decoration: none; /* Убирает подчеркивание */
+}
+
+nav a:hover {
+    color: lightgray; /* Цвет текста при наведении */
+}
 .error {
     color: red;
     font-size: 0.9em;
@@ -83,6 +92,7 @@ h1, h2, h3 {
     background-color: #f8d7da;
     color: #721c24;
 }
+
 
 @media (max-width: 600px) {
     form {
