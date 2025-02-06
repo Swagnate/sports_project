@@ -4,20 +4,39 @@ body, h1, h2, h3, p {
     padding: 0;
 }
 
+/* Основные стили для всего приложения */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #5ee1aa;
-    color: #333;
+    background-color: #0D1117; /* Цвет фона приложения */
+    color: #FFFFFF; /* Цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт */
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 20px; /* Отступы внутри body */
 }
 
-
+/* Стили для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF; /* Белый цвет для заголовков */
+}
 header {
     background: #394450;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
+/* Стили для кнопок */
+.btn {
+    background-color: #28a745; /* Зеленый цвет для кнопок */
+    color: #FFFFFF; /* Белый цвет текста на кнопках */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
 
+.btn:hover {
+    background-color: #218838; /* Темно-зеленый цвет при наведении */
+}
 form {
     background: white;
     padding: 20px;
@@ -38,7 +57,21 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+/* Стили для форм */
+input, textarea {
+    background-color: #1c1f24; /* Цвет фона для полей ввода */
+    color: #FFFFFF; /* Цвет текста в полях ввода */
+    border: 1px solid #28a745; /* Зеленая граница */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px; /* Отступы внутри полей ввода */
+    width: 100%; /* Ширина полей ввода */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
 
+input:focus, textarea:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    border-color: #218838; /* Темно-зеленая граница при фокусе */
+}
 button {
     background: #28a745;
     color: white;
